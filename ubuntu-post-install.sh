@@ -26,6 +26,9 @@ apt-get update
 apt-get upgrade -y
 
 # Installing new softwares
+echo -e "$GREEN Installing softwares $NORMAL"
+apt-get install -y terminator
+apt-get install -y unity-tweak-tool
 
 # Ending script
 echo -e $GREEN
