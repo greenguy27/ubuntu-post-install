@@ -27,8 +27,17 @@ apt-get upgrade -y
 
 # Installing new softwares
 echo -e "$GREEN Installing softwares $NORMAL"
+apt-get install -y sl
+apt-get install -y vim
 apt-get install -y terminator
 apt-get install -y unity-tweak-tool
+apt-get install -y docker.io
+apt-get install -y zsh
+
+# Configuring softwares
+echo -e "$GREEN Configuring softwares $NORMAL"
+echo "ZSH"
+chsh root -s /bin/zsh
 
 # Ending script
 echo -e $GREEN
