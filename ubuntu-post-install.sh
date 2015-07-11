@@ -19,8 +19,8 @@ echo -e $NORMAL
 
 # Adding repositories
 echo -e "$GREEN Adding repositories $NORMAL"
-# Atom
-add-apt-repository ppa:webupd8team/atom -y
+add-apt-repository ppa:webupd8team/atom -y # Atom
+add-apt-repository ppa:webupd8team/popcorntime # Popcorn time
 # Spotify
 sh -c 'echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list'
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886 -y
@@ -42,6 +42,7 @@ apt-get install -y zsh
 apt-get install -y qtcreator
 apt-get install -y atom
 apt-get install -y spotify-client
+apt-get install -y popcorn-time
 
 # Configuring softwares
 echo -e "$GREEN Configuring softwares $NORMAL"
