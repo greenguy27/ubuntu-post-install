@@ -56,6 +56,7 @@ wget http://formation-debian.via.ecp.fr/fichiers-config/dir_colors
 mv zshrc zshenv zlogin zlogout /etc/zsh/
 mv dir_colors /etc/
 chsh root -s /bin/zsh
+chsh lerenn -s /bin/zsh
 
 # Installing personal software
 echo -e "$GREEN Installing software $NORMAL"
@@ -69,6 +70,11 @@ apt-get clean -y
 rm -rf /tmp/*
 
 # Ending script
+echo -e $GREEN
+echo "#########################################################################"
+echo -e $NORMAL
+echo "What you have to do now :"
+echo " - Reboot the system"
 echo -e $GREEN
 echo "#########################################################################"
 echo -e $NORMAL
