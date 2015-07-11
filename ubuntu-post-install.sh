@@ -19,6 +19,7 @@ echo -e $NORMAL
 
 # Adding repositories
 echo -e "$GREEN Adding repositories $NORMAL"
+add-apt-repository ppa:webupd8team/atom -y
 
 # Updating
 echo -e "$GREEN Updating system $NORMAL"
@@ -35,6 +36,7 @@ apt-get install -y unity-tweak-tool
 apt-get install -y docker.io
 apt-get install -y zsh
 apt-get install -y qtcreator
+apt-get install -y atom
 
 # Configuring softwares
 echo -e "$GREEN Configuring softwares $NORMAL"
