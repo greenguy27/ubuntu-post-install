@@ -21,7 +21,7 @@ echo -e $NORMAL
 echo -e "$GREEN Adding repositories $NORMAL"
 sed -i "/^# deb.*partner/ s/^# //" /etc/apt/sources.list # Canonical partners
 add-apt-repository ppa:webupd8team/atom -y # Atom
-add-apt-repository ppa:webupd8team/popcorntime # Popcorn time
+add-apt-repository ppa:webupd8team/popcorntime -y # Popcorn time
 sh -c 'echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list' # Spotify Repo
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886 -y # Spotify Key
 
@@ -32,7 +32,7 @@ apt-get upgrade -y
 apt-get dist-upgrade -y
 
 # Installing new softwares
-echo -e "$GREEN Installing software $NORMAL"
+echo -e "$GREEN Installing software through apt-get $NORMAL"
 apt-get install -y sl
 apt-get install -y vim
 apt-get install -y terminator
@@ -44,6 +44,11 @@ apt-get install -y atom
 apt-get install -y spotify-client
 apt-get install -y popcorn-time
 apt-get install -y steam
+
+# Installing particular software
+echo -e "$GREEN Installing particular software $NORMAL"
+wget http://mir7.ovh.net/ovh-applications/hubic/hubiC-Linux/2.1.0/hubiC-Linux-2.1.0.53-linux.deb -P /tmp/
+dpkg -i /tmp/hubiC-Linux-2.1.0.53-linux.deb
 
 # Configuring softwares
 echo -e "$GREEN Configuring software $NORMAL"
@@ -59,7 +64,7 @@ chsh root -s /bin/zsh
 chsh lerenn -s /bin/zsh
 
 # Installing personal software
-echo -e "$GREEN Installing software $NORMAL"
+echo -e "$GREEN Installing personal software $NORMAL"
 git clone https://github.com/Lerenn/debian-personal-commands.git /tmp/scripts
 /tmp/scripts/script-installer.sh
 
@@ -74,6 +79,7 @@ echo -e $GREEN
 echo "#########################################################################"
 echo -e $NORMAL
 echo "What you have to do now :"
+echo " - Configure Hubic"
 echo " - Reboot the system"
 echo -e $GREEN
 echo "#########################################################################"
