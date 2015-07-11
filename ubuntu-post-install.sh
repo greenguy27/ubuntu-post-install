@@ -19,7 +19,11 @@ echo -e $NORMAL
 
 # Adding repositories
 echo -e "$GREEN Adding repositories $NORMAL"
+# Atom
 add-apt-repository ppa:webupd8team/atom -y
+# Spotify
+sh -c 'echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list'
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886 -y
 
 # Updating
 echo -e "$GREEN Updating system $NORMAL"
@@ -37,6 +41,7 @@ apt-get install -y docker.io
 apt-get install -y zsh
 apt-get install -y qtcreator
 apt-get install -y atom
+apt-get install -y spotify-client
 
 # Configuring softwares
 echo -e "$GREEN Configuring softwares $NORMAL"
