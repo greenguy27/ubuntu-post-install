@@ -24,6 +24,7 @@ echo -e "$GREEN Adding repositories $NORMAL"
 echo -e "$GREEN Updating system $NORMAL"
 apt-get update
 apt-get upgrade -y
+apt-get dist-upgrade -y
 
 # Installing new softwares
 echo -e "$GREEN Installing softwares $NORMAL"
@@ -33,11 +34,24 @@ apt-get install -y terminator
 apt-get install -y unity-tweak-tool
 apt-get install -y docker.io
 apt-get install -y zsh
+apt-get install -y qtcreator
 
 # Configuring softwares
 echo -e "$GREEN Configuring softwares $NORMAL"
 echo "ZSH"
+wget http://formation-debian.via.ecp.fr/fichiers-config/zshrc
+wget http://formation-debian.via.ecp.fr/fichiers-config/zshenv
+wget http://formation-debian.via.ecp.fr/fichiers-config/zlogin
+wget http://formation-debian.via.ecp.fr/fichiers-config/zlogout
+wget http://formation-debian.via.ecp.fr/fichiers-config/dir_colors
+mv zshrc zshenv zlogin zlogout /etc/zsh/
+mv dir_colors /etc/
 chsh root -s /bin/zsh
+
+# Cleaning
+echo -e "$GREEN Cleaning $NORMAL"
+apt-get autoremove -y
+apt-get clean -y
 
 # Ending script
 echo -e $GREEN
