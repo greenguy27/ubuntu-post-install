@@ -32,7 +32,7 @@ apt-get upgrade -y
 apt-get dist-upgrade -y
 
 # Installing new softwares
-echo -e "$GREEN Installing softwares $NORMAL"
+echo -e "$GREEN Installing software $NORMAL"
 apt-get install -y sl
 apt-get install -y vim
 apt-get install -y terminator
@@ -46,7 +46,7 @@ apt-get install -y popcorn-time
 apt-get install -y steam
 
 # Configuring softwares
-echo -e "$GREEN Configuring softwares $NORMAL"
+echo -e "$GREEN Configuring software $NORMAL"
 echo "ZSH"
 wget http://formation-debian.via.ecp.fr/fichiers-config/zshrc
 wget http://formation-debian.via.ecp.fr/fichiers-config/zshenv
@@ -57,10 +57,16 @@ mv zshrc zshenv zlogin zlogout /etc/zsh/
 mv dir_colors /etc/
 chsh root -s /bin/zsh
 
+# Installing personal software
+echo -e "$GREEN Installing software $NORMAL"
+git clone https://github.com/Lerenn/debian-personal-commands.git /tmp/scripts
+/tmp/scripts/script-installer.sh
+
 # Cleaning
 echo -e "$GREEN Cleaning $NORMAL"
 apt-get autoremove -y
 apt-get clean -y
+rm -rf /tmp/*
 
 # Ending script
 echo -e $GREEN
