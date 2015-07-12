@@ -39,6 +39,7 @@ apt-get install -y terminator
 apt-get install -y unity-tweak-tool
 apt-get install -y docker.io
 apt-get install -y zsh
+apt-get install -y python-pip
 apt-get install -y qtcreator
 apt-get install -y atom
 apt-get install -y spotify-client
