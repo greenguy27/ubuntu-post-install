@@ -63,6 +63,10 @@ mv zshrc zshenv zlogin zlogout /etc/zsh/
 mv dir_colors /etc/
 chsh root -s /bin/zsh
 chsh lerenn -s /bin/zsh
+echo "Spotify"
+# Adding missing libgcrypt11
+wget http://security.ubuntu.com/ubuntu/pool/main/libg/libgcrypt11/libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb -P /tmp/
+dpkg -i /tmp/libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb
 
 # Installing personal software
 echo -e "$GREEN Installing personal software $NORMAL"
