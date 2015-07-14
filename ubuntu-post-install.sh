@@ -52,6 +52,7 @@ apt-get install -y atom
 apt-get install -y spotify-client
 apt-get install -y popcorn-time
 apt-get install -y steam
+apt-get install -y playonlinux
 
 # Installing particular software
 echo -e "$GREEN Installing particular software $NORMAL"
