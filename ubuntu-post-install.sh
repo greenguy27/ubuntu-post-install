@@ -28,6 +28,7 @@ echo -e "$GREEN Adding repositories $NORMAL"
 sed -i "/^# deb.*partner/ s/^# //" /etc/apt/sources.list # Canonical partners
 add-apt-repository ppa:webupd8team/atom -y # Atom
 add-apt-repository ppa:webupd8team/popcorntime -y # Popcorn time
+apt-add-repository ppa:ansible/ansible # Ansible
 sh -c 'echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list' # Spotify Repo
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886 -y # Spotify Key
 
@@ -45,6 +46,7 @@ apt-get install -y terminator
 apt-get install -y unity-tweak-tool
 apt-get install -y docker.io
 apt-get install -y zsh
+apt-get install -y ansible
 apt-get install -y python-pip
 apt-get install -y qtcreator
 apt-get install -y golang
