@@ -1,10 +1,16 @@
 #!/bin/bash
 
+# Variables
+MAIN_USER=lerenn
+
 # Verification of root
 if [ ! $USER = root ]; then
   echo "You have to be root to execute this program !"
   exit
 fi
+
+# Go in the script directory
+cd $( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 
 # Setting Colors
 NORMAL="\033[39m"
@@ -73,17 +79,29 @@ echo -e "$GREEN Installing personal software $NORMAL"
 git clone https://github.com/Lerenn/debian-personal-commands.git /tmp/scripts
 /tmp/scripts/script-installer.sh
 
+# Installing personal themes
+echo -e "$GREEN Installing personal themes $NORMAL"
+wget http://download1975.mediafire.com/1ailurmvwemg/frmn82hka2n0s8w/myelementary.tar.gz -P /tmp/
+tar -xzf /tmp/myelementary.tar.gz -C /tmp/
+mkdir /home/$MAIN_USER/.icons
+mv /tmp/myelementary /home/$MAIN_USER/.icons/
+chown -R $MAIN_USER:$MAIN_USER /home/$MAIN_USER/.icons
+unzip -qq ./data/StylishDark-wps.zip -d /tmp/
+mkdir /home/$MAIN_USER/.themes
+mv /tmp/StylishDark-wps /home/$MAIN_USER/.themes
+chown -R $MAIN_USER:$MAIN_USER /home/$MAIN_USER/.themes
+
 # Cleaning
 echo -e "$GREEN Cleaning $NORMAL"
 apt-get autoremove -y
 apt-get clean -y
-rm -rf /tmp/*
 
 # Ending script
 echo -e $GREEN
 echo "#########################################################################"
 echo -e $NORMAL
 echo "What you have to do now :"
+echo " - Change theme"
 echo " - Configure Hubic"
 echo " - Reboot the system"
 echo -e $GREEN
