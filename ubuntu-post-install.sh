@@ -93,6 +93,10 @@ mkdir /home/$MAIN_USER/.themes
 mv /tmp/StylishDark-wps /home/$MAIN_USER/.themes
 chown -R $MAIN_USER:$MAIN_USER /home/$MAIN_USER/.themes
 
+# Installing non satisfied dependencies
+echo -e "$GREEN Installing non satisfied dependencies $NORMAL"
+apt-get -f install -y
+
 # Cleaning
 echo -e "$GREEN Cleaning $NORMAL"
 apt-get autoremove -y
