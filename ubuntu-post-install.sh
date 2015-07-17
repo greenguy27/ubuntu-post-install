@@ -47,6 +47,7 @@ apt-get install -y unity-tweak-tool
 apt-get install -y docker.io
 apt-get install -y zsh
 apt-get install -y ansible
+apt-get install -y openvpn network-manager-openvpn 
 apt-get install -y python-pip
 apt-get install -y qtcreator
 apt-get install -y golang
