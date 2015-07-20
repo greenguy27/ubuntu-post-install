@@ -29,6 +29,7 @@ sed -i "/^# deb.*partner/ s/^# //" /etc/apt/sources.list # Canonical partners
 add-apt-repository ppa:webupd8team/atom -y # Atom
 add-apt-repository ppa:webupd8team/popcorntime -y # Popcorn time
 apt-add-repository ppa:ansible/ansible -y # Ansible
+add-apt-repository ppa:danielrichter2007/grub-customizer -y # grub-customizer
 sh -c 'echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list' # Spotify Repo
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886 -y # Spotify Key
 
@@ -58,6 +59,7 @@ apt-get install -y steam
 apt-get install -y gimp
 apt-get install -y playonlinux
 apt-get install -y exfat-utils exfat-fuse
+apt-get install -y grub-customizer
 
 # Installing particular software
 echo -e "$GREEN Installing particular software $NORMAL"
