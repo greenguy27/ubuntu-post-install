@@ -57,6 +57,7 @@ apt-get install -y popcorn-time
 apt-get install -y steam
 apt-get install -y gimp
 apt-get install -y playonlinux
+apt-get install -y exfat-utils exfat-fuse
 
 # Installing particular software
 echo -e "$GREEN Installing particular software $NORMAL"
