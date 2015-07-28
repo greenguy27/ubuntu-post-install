@@ -60,6 +60,7 @@ apt-get install -y gimp
 apt-get install -y playonlinux
 apt-get install -y exfat-utils exfat-fuse
 apt-get install -y grub-customizer
+apt-get install -y texlive cm-super gv kile # LaTeX
 
 # Installing particular software
 echo -e "$GREEN Installing particular software $NORMAL"
