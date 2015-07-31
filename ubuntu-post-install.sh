@@ -30,6 +30,7 @@ add-apt-repository ppa:webupd8team/atom -y # Atom
 add-apt-repository ppa:webupd8team/popcorntime -y # Popcorn time
 apt-add-repository ppa:ansible/ansible -y # Ansible
 add-apt-repository ppa:danielrichter2007/grub-customizer -y # grub-customizer
+add-apt-repository ppa:ravefinity-project/ppa -y # Vibrancy icons
 sh -c 'echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list' # Spotify Repo
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886 -y # Spotify Key
 
@@ -91,11 +92,7 @@ git clone https://github.com/Lerenn/debian-personal-commands.git /tmp/scripts
 
 # Installing personal themes
 echo -e "$GREEN Installing personal themes $NORMAL"
-wget http://download1975.mediafire.com/1ailurmvwemg/frmn82hka2n0s8w/myelementary.tar.gz -P /tmp/
-tar -xzf /tmp/myelementary.tar.gz -C /tmp/
-mkdir /home/$MAIN_USER/.icons
-mv /tmp/myelementary /home/$MAIN_USER/.icons/
-chown -R $MAIN_USER:$MAIN_USER /home/$MAIN_USER/.icons
+apt-get install -y vibrancy-colors # icons
 unzip -qq ./data/StylishDark-wps.zip -d /tmp/
 mkdir /home/$MAIN_USER/.themes
 mv /tmp/StylishDark-wps /home/$MAIN_USER/.themes
